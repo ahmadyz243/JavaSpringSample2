@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- example of aroundAdvice with AOP xml config -->
+    <aop:aspectj-autoproxy/>
+    <bean id="op" class="logic.Operation"/>
+    <bean id="aspect" class="advice.TrackOperation"/>
+    <aop:config>
+        <aop:aspect id="myAspect" ref="aspect">
+        <aop:pointcut id="aroundPointcut" expression="execution(* logic.Operation.*(..))"/>
+        <aop:around method="myadvice" pointcut-ref="aroundPointcut"/>
+        </aop:aspect>
+    </aop:config>
+    <!-- end of example of aroundAdvice with AOP xml config -->
+
+</beans>
