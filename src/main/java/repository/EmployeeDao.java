@@ -5,9 +5,13 @@ import domain.Employee;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeDao {
 
@@ -37,8 +41,25 @@ public class EmployeeDao {
         });
     }
     public int deleteEmployee(Employee e){
-        String query="delete from employee where id='"+e.getId()+"' ";
+        String query = "delete from employee where id='"+e.getId()+"' ";
         return jdbcTemplate.update(query);
+    }
+
+    ////example for prepared statement resultSet extractor
+        public List<Employee> findAll(){
+        String query = "select * from employee";
+        return jdbcTemplate.query(query, new ResultSetExtractor<List<Employee>>() {
+            @Override
+            public List<Employee> extractData(ResultSet rs) throws SQLException, DataAccessException {
+                List<Employee> employees = new ArrayList<>();
+                Employee e;
+                while (rs.next()){
+                    e = new Employee(rs.getInt(1), rs.getString(2), rs.getFloat(3));
+                    employees.add(e);
+                }
+                return employees;
+            }
+        });
     }
 
 }
