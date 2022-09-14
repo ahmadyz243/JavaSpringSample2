@@ -18,8 +18,10 @@ public class App
 
         //example of JDBC template
         EmployeeDao dao = context.getBean("eDao", EmployeeDao.class);
-        int status = dao.save(new Employee(1, "ahmad", 120000));
+//        int status = dao.save(new Employee(1, "ahmad", 120000));
+//        System.out.println(status);
+        //example for prepared statement
+        Boolean status = dao.updateEmployeeByPreparedStatement(new Employee(1, "abbas", 750000));
         System.out.println(status);
-
     }
 }

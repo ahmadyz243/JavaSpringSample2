@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a8200a7-9d15-40c9-82cf-879dfd3ce911" name="Changes" comment="example of aroundAdvice with AOP xml config">
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/EmployeeDao.java" afterDir="false" />
+    <list default="true" id="5a8200a7-9d15-40c9-82cf-879dfd3ce911" name="Changes" comment="example of JDBC template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/EmployeeDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fb068bf9753a3f55201eeb1564a88ae9&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -62,7 +60,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663054122897</updated>
-      <workItem from="1663054134282" duration="10126000" />
+      <workItem from="1663054134282" duration="10350000" />
+      <workItem from="1663134402781" duration="664000" />
+      <workItem from="1663137410397" duration="1696000" />
+      <workItem from="1663142990540" duration="491000" />
     </task>
     <task id="LOCAL-00001" summary="example of aroundAdvice with AOP xml config">
       <created>1663058304621</created>
@@ -71,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663058304778</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="example of JDBC template">
+      <created>1663068398100</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663068398100</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +98,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="example of aroundAdvice with AOP xml config" />
-    <option name="LAST_COMMIT_MESSAGE" value="example of aroundAdvice with AOP xml config" />
+    <MESSAGE value="example of JDBC template" />
+    <option name="LAST_COMMIT_MESSAGE" value="example of JDBC template" />
   </component>
 </project>
