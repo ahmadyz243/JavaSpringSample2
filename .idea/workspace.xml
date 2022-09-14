@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a8200a7-9d15-40c9-82cf-879dfd3ce911" name="Changes" comment="example for prepared statement">
+    <list default="true" id="5a8200a7-9d15-40c9-82cf-879dfd3ce911" name="Changes" comment="example for prepared statement resultSet extractor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/EmployeeDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +63,8 @@
       <workItem from="1663054134282" duration="10350000" />
       <workItem from="1663134402781" duration="664000" />
       <workItem from="1663137410397" duration="1696000" />
-      <workItem from="1663142990540" duration="2096000" />
+      <workItem from="1663142990540" duration="2269000" />
+      <workItem from="1663160435187" duration="835000" />
     </task>
     <task id="LOCAL-00001" summary="example of aroundAdvice with AOP xml config">
       <created>1663058304621</created>
@@ -87,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663143570508</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="example for prepared statement resultSet extractor">
+      <created>1663145293927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663145293927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +115,7 @@
     <MESSAGE value="example of aroundAdvice with AOP xml config" />
     <MESSAGE value="example of JDBC template" />
     <MESSAGE value="example for prepared statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="example for prepared statement" />
+    <MESSAGE value="example for prepared statement resultSet extractor" />
+    <option name="LAST_COMMIT_MESSAGE" value="example for prepared statement resultSet extractor" />
   </component>
 </project>

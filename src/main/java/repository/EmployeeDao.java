@@ -6,6 +6,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,19 +46,31 @@ public class EmployeeDao {
         return jdbcTemplate.update(query);
     }
 
-    ////example for prepared statement resultSet extractor
-        public List<Employee> findAll(){
+    //example for prepared statement resultSet extractor
+//        public List<Employee> findAll(){
+//        String query = "select * from employee";
+//        return jdbcTemplate.query(query, new ResultSetExtractor<List<Employee>>() {
+//            @Override
+//            public List<Employee> extractData(ResultSet rs) throws SQLException, DataAccessException {
+//                List<Employee> employees = new ArrayList<>();
+//                Employee e;
+//                while (rs.next()){
+//                    e = new Employee(rs.getInt(1), rs.getString(2), rs.getFloat(3));
+//                    employees.add(e);
+//                }
+//                return employees;
+//            }
+//        });
+//    }
+
+    //example for prepared statement RowMapper
+    public List<Employee> findAll(){
         String query = "select * from employee";
-        return jdbcTemplate.query(query, new ResultSetExtractor<List<Employee>>() {
+        return jdbcTemplate.query(query, new RowMapper<Employee>() {
             @Override
-            public List<Employee> extractData(ResultSet rs) throws SQLException, DataAccessException {
-                List<Employee> employees = new ArrayList<>();
-                Employee e;
-                while (rs.next()){
-                    e = new Employee(rs.getInt(1), rs.getString(2), rs.getFloat(3));
-                    employees.add(e);
-                }
-                return employees;
+            public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
+                return new Employee(rs.getInt(1),
+                        rs.getString(2), rs.getFloat(3));
             }
         });
     }
