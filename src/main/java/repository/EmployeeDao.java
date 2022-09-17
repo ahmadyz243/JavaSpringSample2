@@ -7,16 +7,20 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeDao {
 
     private JdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate jTemplate;
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -75,4 +79,28 @@ public class EmployeeDao {
         });
     }
 
+    // example for named parameter
+    public  void saveWithNamedParameter (Employee e){
+        String query="insert into employee values(:id,:name,:salary)";
+
+        Map<String,Object> map=new HashMap<String,Object>();
+        map.put("id",e.getId());
+        map.put("name",e.getName());
+        map.put("salary",e.getSalary());
+
+        jTemplate.execute(query, map, new PreparedStatementCallback<Object>() {
+            @Override
+            public Object doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
+                return ps.executeUpdate();
+            }
+        });
+    }
+
+    public NamedParameterJdbcTemplate getjTemplate() {
+        return jTemplate;
+    }
+
+    public void setjTemplate(NamedParameterJdbcTemplate jTemplate) {
+        this.jTemplate = jTemplate;
+    }
 }

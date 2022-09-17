@@ -23,8 +23,12 @@ public class App
         //example for prepared statement update
 //        Boolean status = dao.updateEmployeeByPreparedStatement(new Employee(1, "abbas", 750000));
 //        System.out.println(status);
+
         //example for prepared statement resultSet extractor & RowMapper findAll method
         System.out.println(dao.findAll());
+
+        // example for named parameter
+//        dao.saveWithNamedParameter(new Employee(3, "Abbas", 100000));
 
     }
 }
