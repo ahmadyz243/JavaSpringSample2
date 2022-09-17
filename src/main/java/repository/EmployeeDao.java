@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,18 +33,22 @@ public class EmployeeDao {
         return jdbcTemplate.update(query);
     }
 
-    //example for prepared statement
-    public Boolean updateEmployeeByPreparedStatement(Employee e){
+    //example for prepared statement & SimpleJdbcTemplate
+    public int updateEmployee(Employee e){
         String query="update employee set name= ?,salary= ? where id= ?";
-        return jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {
-            @Override
-            public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-                ps.setString(1, e.getName());
-                ps.setFloat(2, e.getSalary());
-                ps.setInt(3, e.getId());
-                return ps.execute();
-            }
-        });
+
+        return jdbcTemplate.update(query, e.getName(), e.getSalary(), e.getId());
+
+        // another way for update
+//        return jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {
+//            @Override
+//            public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
+//                ps.setString(1, e.getName());
+//                ps.setFloat(2, e.getSalary());
+//                ps.setInt(3, e.getId());
+//                return ps.execute();
+//            }
+//        });
     }
     public int deleteEmployee(Employee e){
         String query = "delete from employee where id='"+e.getId()+"' ";

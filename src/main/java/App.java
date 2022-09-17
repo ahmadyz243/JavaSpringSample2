@@ -30,5 +30,8 @@ public class App
         // example for named parameter
 //        dao.saveWithNamedParameter(new Employee(3, "Abbas", 100000));
 
+        // example for update with Simple jdbc Template
+        System.out.println(dao.updateEmployee(new Employee(3, "zahra", 200000)));
+
     }
 }
